@@ -120,8 +120,14 @@ class github_mate:
 
 			self.github_data = json.loads(self.request.content)
 
-			self.name_field.insert(0, self.github_data['name'])
+			if self.github_data['name'] != None:
 
+				self.name_field.insert(0, self.github_data['name'])
+
+			else:
+
+				self.name_field.insert(0, "None")
+				
 			self.repositories_field.insert(0, self.github_data['public_repos']) 
 
 			self.followers_field.insert(0, self.github_data['followers'])
