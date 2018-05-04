@@ -1,6 +1,6 @@
 <h1 align="center">github-mate</h1>
 
-A Desktop App written in Python which gives a very brief decripition of your GitHub profile.
+> A Desktop App written in Python which gives a very brief decripition of your GitHub profile.
 
 ## Have a look
 
