@@ -9,6 +9,8 @@ import requests
 
 import json
 
+from PIL import ImageTk, Image
+
 class github_mate:
 
 	# Constructor which gets invoked automatically when the github_mate class is instantiated.	
@@ -19,15 +21,15 @@ class github_mate:
 
 		master.title("GitHub-Mate")
 
-		master.geometry("500x500")
+		master.geometry("500x620")
 
 		master.resizable(False, False)
 
 		# Setting up the UI widgets.
+		
+		self.image = ImageTk.PhotoImage(Image.open("../assets/github.png"))
 
-		#self.caption = Label(text = "GitHub-Mate", font="algerian 30 bold underline", fg = "blue").grid(row = 0, column = 0, columnspan = 2)
-
-		#self.image = PhotoImage('assets/github.png')
+		self.img = Label(image=self.image).grid(row = 0, column = 0, columnspan = 3)
 
 		self.blank_label_one = Label(text = "").grid(row = 1, column = 0)
 
@@ -76,8 +78,24 @@ class github_mate:
 
 		self.blank_label_eight = Label(text = "").grid(row = 14, column = 0)
 
-		self.btn = Button(text = "Get", font="times 22 bold", fg = "red", bd = 2, relief = "raised", command = self.btn_clicked).grid(row = 15, column = 0, columnspan = 2)
+		self.get_btn = Button(text = "Get", font="times 22 bold", fg = "blue", bd = 2, relief = "raised", command = self.btn_clicked).grid(row = 15, column = 0)
 
+		self.clear_btn = Button(text = "Clear", font="times 22 bold", fg = "red", bd = 2, relief = "raised", command = self.clear_clicked).grid(row = 15, column = 1)
+
+
+	def clear_clicked(self):
+
+			self.username_field.delete(0, END)        
+
+			self.name_field.delete(0, END)
+
+			self.repositories_field.delete(0, END)
+
+			self.followers_field.delete(0, END)
+
+			self.following_field.delete(0, END)
+
+			self.gists_field.delete(0, END)                
 
 	def btn_clicked(self):
 
@@ -107,6 +125,7 @@ class github_mate:
 			except:
 
 			    messagebox.showwarning("warning", "Check your network connection!")
+			    self.username_field.delete(0, END)
 			    return
 
 			# Validating whether the user exists or not by checking the status code returned was 404 or not.
