@@ -4,8 +4,8 @@
 
 ## Have a look
 
-![Image](https://github.com/jamesgeorge007/github-mate/blob/master/assets/screenshots/image.JPG)
+![Image](https://github.com/jamesgeorge007/GitHub-Mate-Desktop/blob/master/assets/screenshots/image.JPG)
 
-![Image](https://github.com/jamesgeorge007/github-mate/blob/master/assets/screenshots/network.JPG)
+![Image](https://github.com/jamesgeorge007/GitHub-Mate-Desktop/blob/master/assets/screenshots/network.JPG)
 
-![Image](https://github.com/jamesgeorge007/github-mate/blob/master/assets/screenshots/validation.JPG)
+![Image](https://github.com/jamesgeorge007/GitHub-Mate-Desktop/blob/master/assets/screenshots/validation.JPG)
