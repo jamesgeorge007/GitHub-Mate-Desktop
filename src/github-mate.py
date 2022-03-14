@@ -113,27 +113,27 @@ class github_mate:
 
 			if self.username == "":
 
-			   messagebox.showwarning("warning", "Kindly enter a username!")
-			   return  
+				messagebox.showwarning("warning", "Kindly enter a username!")
+				return
 
 			# Using requests library to perform a request to the Github API
 
 			try:
 
-			    self.request = requests.get('https://api.github.com/users/' + self.username)
+				self.request = requests.get('https://api.github.com/users' + self.username)
 
 			except:
 
-			    messagebox.showwarning("warning", "Check your network connection!")
-			    self.username_field.delete(0, END)
-			    return
+				messagebox.showwarning("warning", "Check your network connection!")
+				self.username_field.delete(0, END)
+				return
 
 			# Validating whether the user exists or not by checking the status code returned was 404 or not.
 			
 			if not self.request.ok:
 
-			   messagebox.showwarning("Warning", "User doesn't exist!")	
-			   return
+				messagebox.showwarning("Warning", "User doesn't exist!")	
+				return
 
 			# Fetching JSON data returned from the API.   
 
