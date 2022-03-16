@@ -162,3 +162,4 @@ if __name__ == '__main__':
 
 	root = Tk()
 	app = github_mate(root)	  	
+root.mainloop()
